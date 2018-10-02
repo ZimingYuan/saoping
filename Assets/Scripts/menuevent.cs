@@ -3,7 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class menuevent : MonoBehaviour {
 
-	public void play() {
+    public static bool isbgmspawned = false;
+    [SerializeField] private GameObject bgmprefab;
+    public static AudioSource bgm;
+
+    void Start() {
+        if (!isbgmspawned) {
+            isbgmspawned = true;
+            bgm = Instantiate(bgmprefab).GetComponent<AudioSource>();
+            bgm.volume = PlayerPrefs.GetFloat("volume");
+            bgm.Play();
+            DontDestroyOnLoad(bgm);
+        }
+    }
+
+
+
+    public void play() {
         SceneManager.LoadScene("game");
     }
 
@@ -14,5 +30,7 @@ public class menuevent : MonoBehaviour {
     public void exit() {
         Application.Quit();
     }
+
+
 
 }

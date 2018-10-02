@@ -15,11 +15,12 @@ public class bullet : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D collider) {
-        if (collider.gameObject.name == "wall") GameObject.Destroy(gameObject, 0.1f);
-        if ((collider.gameObject.name == "player1" && gameObject.name == "redbullet")
-         || (collider.gameObject.name == "player2" && gameObject.name == "bluebullet")) {
+        if (collider.name == "walllr" || collider.name == "wallud") Destroy(gameObject);
+        if ((collider.name == "player1" && name == "redbullet")
+         || (collider.name == "player2" && name == "bluebullet")) {
             collider.gameObject.GetComponent<player>().injured();
-            GameObject.Destroy(gameObject, 0.1f);
+            collider.gameObject.GetComponent<Rigidbody2D>().velocity += gameObject.GetComponent<Rigidbody2D>().velocity / 4;
+            Destroy(gameObject);
         }
     }
 

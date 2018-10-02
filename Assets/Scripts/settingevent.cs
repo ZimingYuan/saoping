@@ -10,6 +10,10 @@ public class settingevent : MonoBehaviour {
         volcon.value = PlayerPrefs.GetFloat("volume", 1);
     }
 
+    public void change() {
+        menuevent.bgm.volume = volcon.value;
+    }
+
     public void save() {
         PlayerPrefs.SetFloat("volume", volcon.value);
         SceneManager.LoadScene("menu");
