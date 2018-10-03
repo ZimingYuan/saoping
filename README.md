@@ -8,3 +8,8 @@ Now the scene will shrink after the game has begun for 1min. You will also hurt 
 
 #### Update on 18/10/03:
 Finish the remained 2 buffs(split and thunder). Also complete the emission effect using shader and write a simple ai for the single mode.
+
+#### The origin of some assests:
+eating.wav: https://freesound.org/people/Tristan_Lohengrin/sounds/251484/
+collision.wav: https://freesound.org/people/jeckkech/sounds/391658/
+myshader.shader: modified from Unity3D built-in shader:Sprites-Diffuse.shader
