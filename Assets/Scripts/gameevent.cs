@@ -7,7 +7,9 @@ public class gameevent : MonoBehaviour {
 
     [SerializeField] private GameObject pmenu;
     [SerializeField] private GameObject pausebtn, continuebtn;
+    [SerializeField] private GameObject player1, player2;
     [SerializeField] private Text win;
+    [SerializeField] private bool issingle;
 
     public void pause() {
         pmenu.SetActive(true);
@@ -22,7 +24,8 @@ public class gameevent : MonoBehaviour {
     }
 
     public void regame() {
-        SceneManager.LoadScene("game");
+        if(issingle) SceneManager.LoadScene("single");
+        else SceneManager.LoadScene("game");
     }
 
     public void _return() {
@@ -37,9 +40,10 @@ public class gameevent : MonoBehaviour {
 
     public IEnumerator gameover(string winplayer) {
         yield return new WaitForSeconds(1.4f);
+        Destroy(player1);
+        Destroy(player2);
         pmenu.SetActive(true);
         pausebtn.SetActive(false);
-        Time.timeScale = 0;
         continuebtn.SetActive(false);
         win.text = winplayer + "胜利！";
     }

@@ -11,7 +11,6 @@ public class gamelogic : MonoBehaviour {
     [SerializeField] public AudioSource eat, impact, shoot, explode, collision;
 
     void Start () {
-        Time.timeScale = 1;
         resisdestroyed = true;
         shouldspawn = false;
         rnd = new System.Random();
@@ -24,7 +23,7 @@ public class gamelogic : MonoBehaviour {
         if (shouldspawn) {
             resisdestroyed = false;
             shouldspawn = false;
-            int a = 0; // rnd.Next(4);
+            int a = rnd.Next(4);
             switch (a) {
                 case 0:
                     temp = Instantiate(bomb);
@@ -59,9 +58,9 @@ public class gamelogic : MonoBehaviour {
     }
 
     private IEnumerator wallmove() {
-        yield return new WaitForSeconds(60);
-        walll.GetComponent<Rigidbody2D>().velocity = new Vector3(0.1f, 0);
-        wallr.GetComponent<Rigidbody2D>().velocity = new Vector3(-0.1f, 0);
+        yield return new WaitForSeconds(20);
+        walll.GetComponent<Rigidbody2D>().velocity = new Vector3(0.5f, 0);
+        wallr.GetComponent<Rigidbody2D>().velocity = new Vector3(-0.5f, 0);
     }
 
 }

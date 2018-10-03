@@ -5,3 +5,6 @@ Prepared the texture resources. Finished main menu, setting panel and pause menu
 
 #### Update on 18/10/02:
 Now the scene will shrink after the game has begun for 1min. You will also hurt or explode after you've been struct. Sound effects and bounce bomb are added as well.
+
+#### Update on 18/10/03:
+Finish the remained 2 buffs(split and thunder). Also complete the emission effect using shader and write a simple ai for the single mode.

@@ -16,6 +16,7 @@ public class bullet : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider) {
         if (collider.name == "walllr" || collider.name == "wallud") Destroy(gameObject);
+        //Time.timeScale = 0;
         if ((collider.name == "player1" && name == "redbullet")
          || (collider.name == "player2" && name == "bluebullet")) {
             collider.gameObject.GetComponent<player>().injured();

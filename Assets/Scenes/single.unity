@@ -743,7 +743,7 @@ MonoBehaviour:
   player1: {fileID: 1083251553}
   player2: {fileID: 1745408384}
   win: {fileID: 1202053475}
-  issingle: 0
+  issingle: 1
 --- !u!1 &749591868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,7 +2236,7 @@ GameObject:
   - component: {fileID: 1745408387}
   - component: {fileID: 1745408386}
   - component: {fileID: 1745408385}
-  - component: {fileID: 1745408390}
+  - component: {fileID: 1745408389}
   m_Layer: 0
   m_Name: player2
   m_TagString: Untagged
@@ -2348,7 +2348,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 165}
---- !u!114 &1745408390
+--- !u!114 &1745408389
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   collisionpoint: {fileID: 1990839474841604, guid: 9421eedfe0157f6479ce88e4a41b4a53,
     type: 2}
   gameevent: {fileID: 699534297}
-  isai: 0
+  isai: 1
 --- !u!1 &1827676344
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1988595818}
   - component: {fileID: 1988595819}
+  - component: {fileID: 1988595820}
   m_Layer: 0
   m_Name: gamelogic
   m_TagString: Untagged
@@ -2790,6 +2791,20 @@ MonoBehaviour:
   shoot: {fileID: 864927625}
   explode: {fileID: 236849799}
   collision: {fileID: 893304739}
+--- !u!114 &1988595820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1988595817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ee065b4060417643bb212a07c47f457, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  airun: 0
+  aiplayer: {fileID: 1745408384}
+  hmplayer: {fileID: 1083251553}
 --- !u!1 &2032944925
 GameObject:
   m_ObjectHideFlags: 0

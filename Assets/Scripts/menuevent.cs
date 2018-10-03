@@ -17,7 +17,9 @@ public class menuevent : MonoBehaviour {
         }
     }
 
-
+    public void single() {
+        SceneManager.LoadScene("single");
+    }
 
     public void play() {
         SceneManager.LoadScene("game");
