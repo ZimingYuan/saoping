@@ -11,11 +11,11 @@ public class shaxai : MonoBehaviour {
 	
 	void Update () {
         if (aiplayer != null) {
-            if (aiplayer.GetComponent<Rigidbody2D>().angularVelocity < 20) {
+            if (aiplayer.GetComponent<Rigidbody2D>().angularVelocity < 15) {
                 airun = true;
             }
             float a = Vector3.Angle(hmplayer.transform.position - aiplayer.transform.position, aiplayer.transform.rotation * new Vector3(1, 0));
-            if (a < 15 || a > 165) airun = true;
+            if (a < 10 || a > 170) airun = true;
         }
 	}
 }

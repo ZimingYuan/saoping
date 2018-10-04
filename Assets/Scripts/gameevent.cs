@@ -18,17 +18,19 @@ public class gameevent : MonoBehaviour {
     }
 
     public void _continue() {
+        Time.timeScale = 1;
         pmenu.SetActive(false);
         pausebtn.SetActive(true);
-        Time.timeScale = 1;
     }
 
     public void regame() {
+        Time.timeScale = 1;
         if(issingle) SceneManager.LoadScene("single");
         else SceneManager.LoadScene("game");
     }
 
     public void _return() {
+        Time.timeScale = 1;
         SceneManager.LoadScene("menu");
     }
 

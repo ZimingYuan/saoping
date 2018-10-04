@@ -11,6 +11,7 @@ Shader "Sprite/Myshader"
         [HideInInspector] _Flip ("Flip", Vector) = (1,1,1,1)
         [PerRendererData] _AlphaTex ("External Alpha", 2D) = "white" {}
         [PerRendererData] _EnableExternalAlpha ("Enable External Alpha", Float) = 0
+        _Intensity ("Emission Intensity", Range(1, 5)) = 1.2
     }
 
     SubShader
@@ -52,13 +53,15 @@ Shader "Sprite/Myshader"
             UNITY_INITIALIZE_OUTPUT(Input, o);
             o.color = v.color * _Color * _RendererColor;
         }
+        
+        fixed _Intensity;
 
         void surf (Input IN, inout SurfaceOutput o)
         {
             fixed4 c = SampleSpriteTexture (IN.uv_MainTex) * IN.color;
             o.Albedo = c.rgb * c.a;
             o.Alpha = c.a;
-            o.Emission = c.rgb * c.a * 1.2;
+            o.Emission = c.rgb * c.a * _Intensity;
         }
         ENDCG
     }
