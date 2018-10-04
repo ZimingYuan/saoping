@@ -70,7 +70,7 @@ public class player : MonoBehaviour {
             gamelogic.GetComponent<gamelogic>().resisdestroyed = true;
             Destroy(collider.gameObject);
             gamelogic.GetComponent<gamelogic>().eat.Play();
-            tdrem = 3;
+            tdrem = 5;
             sprem = 2;
         }
         if (collider.name == "recover") {
